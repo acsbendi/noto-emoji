@@ -15,7 +15,7 @@
 EMOJI = NotoColorEmoji
 font: $(EMOJI).ttf
 
-PNGQUANT = pngquant
+PNGQUANT = ./pngquant
 PYTHON = python3
 PNGQUANTFLAGS = --speed 1 --skip-if-larger --quality 85-95 --force
 BODY_DIMENSIONS = 136x128
