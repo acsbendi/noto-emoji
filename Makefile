@@ -15,9 +15,6 @@
 EMOJI = NotoColorEmoji
 font: $(EMOJI).ttf
 
-CFLAGS = -std=c99 -Wall -Wextra `pkg-config --cflags --libs cairo`
-LDFLAGS = -lm `pkg-config --libs cairo`
-
 PNGQUANT = pngquant
 PYTHON = python3
 PNGQUANTFLAGS = --speed 1 --skip-if-larger --quality 85-95 --force
@@ -150,10 +147,6 @@ endif
 
 $(EMOJI_DIR) $(FLAGS_DIR) $(RESIZED_FLAGS_DIR) $(RENAMED_FLAGS_DIR) $(QUANTIZED_DIR) $(COMPRESSED_DIR):
 	mkdir -p "$@"
-
-
-waveflag: waveflag.c
-	$(CC) $< -o $@ $(CFLAGS) $(LDFLAGS)
 
 
 # imagemagick's -extent operator munges the grayscale images in such a fashion
