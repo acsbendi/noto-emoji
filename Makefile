@@ -161,7 +161,7 @@ $(EMOJI_DIR) $(FLAGS_DIR) $(RESIZED_FLAGS_DIR) $(RENAMED_FLAGS_DIR) $(QUANTIZED_
 $(EMOJI_DIR)/%.png: $(EMOJI_SRC_DIR)/%.png | $(EMOJI_DIR)
 	@convert $(IMOPS) "$<" -composite "PNG32:$@"
 
-$(FLAGS_DIR)/%.png: $(FLAGS_SRC_DIR)/%.png ./waveflag | $(FLAGS_DIR)
+$(FLAGS_DIR)/%.png: $(FLAGS_SRC_DIR)/%.png | $(FLAGS_DIR)
 	@./waveflag $(FLAGS_DIR)/ "$<"
 
 $(RESIZED_FLAGS_DIR)/%.png: $(FLAGS_DIR)/%.png | $(RESIZED_FLAGS_DIR)
